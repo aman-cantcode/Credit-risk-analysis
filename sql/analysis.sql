@@ -1,12 +1,3 @@
--- =====================================================================
--- Credit Risk Analysis - MySQL analyst queries
--- Dataset: UCI Statlog German Credit Data (processed version, 1000 rows)
---
--- HOW TO RUN
---   1. Create the database and table + load the data (Section 1).
---   2. Run any of the analyst queries in Section 2 individually.
--- =====================================================================
-
 -- ---------------------------------------------------------------------
 -- SECTION 1: Database, table, and data load
 -- ---------------------------------------------------------------------
@@ -43,10 +34,8 @@ CREATE TABLE credit_risk (
     credit_per_month        DECIMAL(10, 2)
 );
 
--- NOTE: LOAD DATA LOCAL INFILE requires local_infile to be enabled on
--- both the server and the client. See README "MySQL setup" section.
--- Replace the path below with the absolute path to your processed CSV.
-LOAD DATA LOCAL INFILE '/absolute/path/to/credit-risk-analysis/data/processed/german_credit_processed.csv'
+-- LOAD DATA LOCAL INFILE requires local_infile to be enabled on both the server and the client.
+LOAD DATA LOCAL INFILE '/home/aman/Projects/files/credit-risk-analysis/data/processed/german_credit_processed.csv'
 INTO TABLE credit_risk
 FIELDS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
@@ -58,7 +47,6 @@ IGNORE 1 ROWS
  housing, existing_credits, job, num_dependents, telephone, foreign_worker,
  risk, age_group, credit_per_month);
 
--- Quick sanity check after loading
 SELECT COUNT(*) AS total_rows FROM credit_risk;
 
 -- ---------------------------------------------------------------------
