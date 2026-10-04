@@ -1,10 +1,3 @@
-"""
-Reusable data cleaning and feature engineering functions for the German Credit
-dataset. This mirrors the logic used step-by-step in
-notebooks/01_data_cleaning.ipynb, packaged as functions so it can be reused
-without re-running the whole notebook (e.g. by other scripts or notebooks).
-"""
-
 import pandas as pd
 
 RAW_COLUMN_NAMES = [
